@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DriveTrain Solutions Services LLC | Transmission Repair in Escondido, CA</title>
+<meta name="description" content="Automatic and manual transmission repair for domestic and imported vehicles in Escondido, CA. Call 760-215-7451 for a diagnosis and estimate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   DriveTrain Solutions Services LLC - Escondido, CA
+   Colors live in the tokens right below.
+   ============================================================ */
+:root {
+  --bg: #c9e3f4;          /* machined steel */
+  --surface: #ffffff;
+  --ink: #032f5b;         /* graphite */
+  --muted: #3e5c7b;
+  --line: #c9d0d6;
+  --atf: #fd6961;         /* transmission-fluid red */
+  --atf-ink: #ffffff;
+  --band: #012a53;
+  --band-ink: #eceff1;
+  --font-head: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+  --font-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #02203d; --surface: #243f56; --ink: #eceff1; --muted: #a3adb6;
+    --line: #9aacbe; --atf: #a5f930e1; --atf-ink: #0c2a63; --band: #082747; --band-ink: #eceff1;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #012244; --surface: #04365e; --ink: #eceff1; --muted: #a3adb6;
+  --line: #38414a; --atf: #e0483d; --atf-ink: #490802; --band: #022b54; --band-ink: #eceff1;
+}
+html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.6; }
+h1, h2, h3 { font-family: var(--font-head); line-height: 1.02; margin: 0; letter-spacing: .01em; }
+p { margin: 0; }
+a { color: inherit; }
+.wrap { max-width: 68rem; margin: 0 auto; padding: 0 1.25rem; }
+:focus-visible { outline: 3px solid var(--atf); outline-offset: 3px; }
+
+/* header */
+.top { background: var(--band); color: var(--band-ink); }
+.top .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .6rem 1rem; padding-top: .8rem; padding-bottom: .8rem; }
+.brand { font-family: var(--font-head); font-weight: 800; font-size: clamp(1.25rem, 5.2vw, 1.6rem); line-height: 1.1; text-decoration: none; letter-spacing: .02em; flex: 1 1 15rem; }
+.top a.call { font-weight: 700; text-decoration: none; white-space: nowrap; border: 2px solid var(--band-ink); padding: .35rem .8rem; }
+.top a.call:hover { background: var(--band-ink); color: var(--band); }
+
+/* hero */
+.hero { padding: 3.2rem 0 3rem; border-bottom: 1px solid var(--line); }
+.hero h1 { font-size: clamp(2.7rem, 9.5vw, 5.6rem); font-weight: 800; max-width: 14ch; }
+.hero p.lead { margin-top: 1.2rem; max-width: 34rem; font-size: 1.2rem; color: var(--muted); }
+.actions { margin-top: 1.7rem; display: flex; flex-wrap: wrap; gap: .8rem; }
+.btn { display: inline-block; font-weight: 700; font-size: 1.1rem; text-decoration: none; padding: .85rem 1.4rem; border: 2px solid var(--atf); }
+.btn.primary { background: var(--atf); color: var(--atf-ink); }
+.btn.primary:hover { filter: brightness(1.08); }
+.btn.ghost { color: var(--atf); }
+.btn.ghost:hover { background: var(--atf); color: var(--atf-ink); }
+
+/* gear selector strip */
+.gears { margin-top: 2.4rem; display: inline-flex; border: 2px solid var(--ink); background: var(--surface); font-family: var(--font-head); font-weight: 700; font-size: 1.5rem; }
+.gears span { padding: .2rem .95rem; border-right: 1px solid var(--line); color: var(--muted); }
+.gears span:last-child { border-right: 0; }
+.gears span.on { background: var(--atf); color: var(--atf-ink); }
+.gears-note { margin-top: .5rem; font-size: .95rem; color: var(--muted); }
+
+section { padding: 3.2rem 0; }
+h2 { font-size: clamp(2rem, 6vw, 3rem); font-weight: 800; }
+.sub { margin-top: .6rem; color: var(--muted); max-width: 36rem; }
+
+/* symptoms */
+.symptoms { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; gap: .7rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); }
+.symptoms li { background: var(--surface); border-left: 5px solid var(--atf); padding: .9rem 1rem; font-weight: 600; }
+.symptoms li small { display: block; font-weight: 400; color: var(--muted); font-size: .95rem; }
+
+/* services */
+.services { margin-top: 1.6rem; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+.service { background: var(--surface); border: 1px solid var(--line); padding: 1.3rem; }
+.service h3 { font-size: 1.7rem; font-weight: 700; margin-bottom: .4rem; }
+.service p { color: var(--muted); }
+
+/* vehicles band */
+.band { background: var(--band); color: var(--band-ink); }
+.band .sub { color: #b9c2ca; }
+.makes { margin: 1.6rem 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: .5rem; }
+.makes li { border: 1px solid #435466; padding: .3rem .8rem; font-weight: 600; }
+.band .fine { margin-top: 1.1rem; color: #b9c2ca; }
+
+/* process */
+.steps { margin: 1.6rem 0 0; padding: 0; list-style: none; counter-reset: s; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); }
+.steps li { counter-increment: s; border-top: 4px solid var(--ink); padding-top: .7rem; }
+.steps li::before { content: counter(s); display: block; font-family: var(--font-head); font-weight: 800; font-size: 2.2rem; color: var(--atf); line-height: 1; }
+.steps b { display: block; font-size: 1.15rem; margin-top: .2rem; }
+.steps span { color: var(--muted); }
+
+/* contact */
+.contact { background: var(--surface); border-top: 1px solid var(--line); }
+.grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); margin-top: 1.6rem; }
+.phone { font-family: var(--font-head); font-weight: 800; font-size: clamp(2.2rem, 8vw, 3.4rem); text-decoration: none; color: var(--atf); line-height: 1; }
+.hours { width: 100%; border-collapse: collapse; }
+.hours td { padding: .35rem 0; border-bottom: 1px solid var(--line); }
+.hours td:last-child { text-align: right; font-weight: 600; }
+footer { padding: 1.6rem 0; color: var(--muted); font-size: .95rem; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">DriveTrain Solutions Services LLC</a>
+    <a class="call" href="tel:+17602157451">Call 760-215-7451</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <h1>Transmission problems? We fix them.</h1>
+      <p class="lead">Automatic or manual, domestic or imported, car, truck, or SUV. Bring it in and we'll find out what's wrong and give you a clear estimate before any work starts.</p>
+      <div class="actions">
+        <a class="btn primary" href="tel:+17602157451">Call for an estimate</a>
+        <a class="btn ghost" href="#signs">Is it my transmission?</a>
+      </div>
+      <div class="gears" aria-hidden="true"><span>P</span><span>R</span><span>N</span><span class="on">D</span><span>2</span><span>1</span></div>
+      <p class="gears-note">Every gear, every make.</p>
+    </div>
+  </div>
+
+  <section id="signs">
+    <div class="wrap">
+      <h2>Signs your transmission needs attention</h2>
+      <p class="sub">Catching these early can mean a smaller repair. If you notice any of them, get it checked.</p>
+      <ul class="symptoms">
+        <li>Slipping out of gear<small>RPMs jump but the car doesn't keep up.</small></li>
+        <li>Delay when shifting into Drive or Reverse<small>A pause, then a clunk.</small></li>
+        <li>Hard or rough shifts<small>Jerking between gears.</small></li>
+        <li>Grinding or a stiff clutch<small>Common in manual transmissions.</small></li>
+        <li>Red or brown fluid under the car<small>Transmission fluid is usually red.</small></li>
+        <li>Burning smell or a warning light<small>Don't keep driving on it.</small></li>
+      </ul>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <h2>What we do</h2>
+      <div class="services">
+        <div class="service"><h3>Automatic transmissions</h3><p>Diagnosis, repair, and full rebuilds for automatic transmissions of all kinds.</p></div>
+        <div class="service"><h3>Manual transmissions</h3><p>Clutch, flywheel, and gearbox repair for manual and stick-shift vehicles.</p></div>
+        <div class="service"><h3>Fluid service and leaks</h3><p>Fluid and filter changes, and leak repair before small problems get expensive.</p></div>
+        <div class="service"><h3>Diagnostics</h3><p>We find the real cause first, so you only pay for the repair you need.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <h2>Domestic and imported, no exceptions</h2>
+      <p class="sub">If it has a transmission, bring it in. A few of the makes we work on:</p>
+      <ul class="makes">
+        <li>Ford</li><li>Chevrolet</li><li>Dodge</li><li>Jeep</li><li>GMC</li><li>Toyota</li><li>Honda</li><li>Nissan</li><li>Subaru</li><li>Hyundai</li><li>Kia</li><li>BMW</li><li>Mercedes-Benz</li><li>Volkswagen</li><li>Audi</li>
+      </ul>
+      <p class="fine">Don't see your make? Call and ask.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><b>Bring it in</b><span>Tell us what you're noticing.</span></li>
+        <li><b>We diagnose it</b><span>We find the cause, not just the symptom.</span></li>
+        <li><b>You get an estimate</b><span>Clear price before we start.</span></li>
+        <li><b>We repair it</b><span>Repair or rebuild, done right.</span></li>
+        <li><b>Road test</b><span>We test it before you get it back.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2>Get your car back on the road</h2>
+      <div class="grid">
+        <div>
+          <a class="phone" href="tel:+17602157451">(760) 215-7451</a>
+          <p style="margin-top:.9rem">1155 E Grand Ave #9<br>Escondido, CA 92025</p>
+          <p style="margin-top:.9rem" class="sub">Call or stop by and ask for Juan. Tell him the make, model, and what it's doing.</p>
+        </div>
+        <p class="sub" style="margin-top:0">Call or stop by for current hours.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; DriveTrain Solutions Services LLC, Escondido, CA. Automatic and manual transmission repair. Webpage by BMC1</div>
+</footer>
+
+</body>
+</html>
