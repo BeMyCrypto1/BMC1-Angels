@@ -102,6 +102,18 @@ h2 { font-size: clamp(2rem, 6vw, 3rem); font-weight: 800; }
 .steps b { display: block; font-size: 1.15rem; margin-top: .2rem; }
 .steps span { color: var(--muted); }
 
+/* video section */
+.video-section { padding: 3.2rem 0; }
+.promo-video { width: 100%; max-width: 22rem; display: block; margin: 1.6rem auto 0; background: #000; }
+.video-switch { display: flex; justify-content: center; gap: .5rem; margin-top: 1.6rem; }
+.lang-btn {
+  font-family: var(--font-head); font-weight: 700; font-size: 1.1rem;
+  padding: .45rem 1.1rem; border: 2px solid var(--atf);
+  background: transparent; color: var(--atf); cursor: pointer;
+}
+.lang-btn.active { background: var(--atf); color: var(--atf-ink); }
+.lang-btn:hover { filter: brightness(1.08); }
+
 /* contact */
 .contact { background: var(--surface); border-top: 1px solid var(--line); }
 .grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); margin-top: 1.6rem; }
@@ -111,6 +123,9 @@ h2 { font-size: clamp(2rem, 6vw, 3rem); font-weight: 800; }
 .hours td:last-child { text-align: right; font-weight: 600; }
 footer { padding: 1.6rem 0; color: var(--muted); font-size: .95rem; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media (max-width: 600px) {
+  .video-section { padding: 2rem 0; }
+}
 </style>
 </head>
 <body>
@@ -135,6 +150,23 @@ footer { padding: 1.6rem 0; color: var(--muted); font-size: .95rem; }
       <p class="gears-note">Every gear, every make.</p>
     </div>
   </div>
+
+  <section class="video-section">
+    <div class="wrap">
+      <h2>See us in action</h2>
+      <p class="sub">A quick look at what we do. / Un vistazo a lo que hacemos.</p>
+
+      <div class="video-switch">
+        <button class="lang-btn active" data-video="en">English</button>
+        <button class="lang-btn" data-video="es">Español</button>
+      </div>
+
+      <video id="promo-video" class="promo-video" controls playsinline preload="metadata">
+        <source id="promo-source" src="DTSS_Escondido_Eng.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
 
   <section id="signs">
     <div class="wrap">
@@ -205,6 +237,26 @@ footer { padding: 1.6rem 0; color: var(--muted); font-size: .95rem; }
 <footer>
   <div class="wrap">&copy; DriveTrain Solutions Services LLC, Escondido, CA. Automatic and manual transmission repair. Webpage by BMC1</div>
 </footer>
+
+<script>
+  const video = document.getElementById('promo-video');
+  const source = document.getElementById('promo-source');
+  const buttons = document.querySelectorAll('.lang-btn');
+
+  const videos = {
+    en: 'DTSS_Escondido_Eng.mp4',
+    es: 'DTSS_Escondido_Span.mp4'
+  };
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      source.src = videos[btn.dataset.video];
+      video.load();
+    });
+  });
+</script>
 
 </body>
 </html>
